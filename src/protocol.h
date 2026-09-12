@@ -14,7 +14,7 @@ static const uint8_t kMuxMagic1 = 0x5A;
 
 enum MuxType : uint8_t {
     kMuxSensor = 0x01,  // 70-byte raw sensor frame
-    kMuxAudio = 0x02,   // int16 LE PCM, 16 kHz mono
+    kMuxAudio = 0x02,   // int16 LE PCM, 48 kHz mono
     kMuxSwitch = 0x03,  // 1 byte: bit0=SW1, bit1=SW2, 1=closed
     kMuxStatus = 0x04,  // 4x uint32 LE counters
 };
@@ -23,8 +23,8 @@ static const uint16_t kSensorFrameLen = 70;
 static const uint8_t kSensorHead0 = 0xFF;
 static const uint8_t kSensorHead1 = 0x84;
 
-static const uint32_t kAudioSampleRate = 16000;
-static const uint16_t kAudioSamplesPerChunk = 320;  // 20 ms
+static const uint32_t kAudioSampleRate = 48000;
+static const uint16_t kAudioSamplesPerChunk = 960;  // 20 ms
 static const uint16_t kAudioChunkBytes = kAudioSamplesPerChunk * sizeof(int16_t);
 
 static const uint16_t kStatusPayloadLen = 16;

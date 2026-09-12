@@ -27,9 +27,9 @@ python tools/usb_mux_dump.py COM5
 python tools/usb_mux_dump.py COM5 --wav capture.wav --quiet-audio
 ```
 
-USB 包：`A5 5A | type | len_le | payload | crc16_ccitt_le`（CRC 覆盖 type+len+payload）。
+完整对接说明见 [doc/串口数据协议.md](doc/串口数据协议.md)。USB 包：`A5 5A | type | len_le | payload | crc16_ccitt_le`（CRC 覆盖 type+len+payload）。
 
 - `0x01` 传感器原始 70 字节（`FF 84 ...`）
-- `0x02` 16 kHz / 16-bit 单声道 PCM，每块 320 sample（20 ms）
+- `0x02` 48 kHz / 16-bit 单声道 PCM，每块 960 sample（20 ms）
 - `0x03` 开关，bit0=SW1，bit1=SW2，1=闭合；变化立即上报，200 ms 心跳
 - `0x04` 计数：sensor_ok / checksum_fail / audio_dropped / usb_incomplete

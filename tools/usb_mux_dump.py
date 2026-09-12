@@ -6,7 +6,7 @@ CRC-16-CCITT-FALSE over type + len + payload (poly 0x1021, init 0xFFFF).
 
 Types:
   0x01 sensor  70-byte raw frame (FF 84 ...)
-  0x02 audio   int16 LE PCM, 16 kHz mono, 320 samples / 20 ms
+  0x02 audio   int16 LE PCM, 48 kHz mono, 960 samples / 20 ms
   0x03 switch  bit0=SW1, bit1=SW2, 1=closed
   0x04 status  sensor_ok, checksum_fail, audio_dropped, usb_incomplete (u32 LE)
 
@@ -38,7 +38,7 @@ TYPE_SENSOR = 0x01
 TYPE_AUDIO = 0x02
 TYPE_SWITCH = 0x03
 TYPE_STATUS = 0x04
-AUDIO_RATE = 16000
+AUDIO_RATE = 48000
 
 
 def crc16_ccitt(data: bytes, init: int = 0xFFFF) -> int:

@@ -4,19 +4,19 @@ overview: 在几乎空白的仓库上，用 PlatformIO + Arduino 为 XIAO ESP32-
 todos:
   - id: pio-skeleton
     content: 创建 PlatformIO 工程与 protocol.h / USB CDC 初始化骨架
-    status: pending
+    status: completed
   - id: sensor-uart
     content: 实现 UART1 D0/D1 70 字节组帧、校验和 0x01 透传
-    status: pending
+    status: completed
   - id: audio-pdm
     content: 接入 GPIO42/41 PDM 16 kHz，按 20 ms 块发 0x02
-    status: pending
+    status: completed
   - id: switches-mux
     content: D3/D4 去抖开关、心跳与 USB 写出背压
-    status: pending
+    status: completed
   - id: host-dump
     content: 补充 Python 解包脚本用于联调 CNT、PCM、开关
-    status: pending
+    status: completed
 isProject: false
 ---
 
